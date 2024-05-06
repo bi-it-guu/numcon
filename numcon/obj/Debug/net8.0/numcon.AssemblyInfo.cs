@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("numcon")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd9a1792a77d1513513322e5c041e2e09664f8c7")]
 [assembly: System.Reflection.AssemblyProductAttribute("numcon")]
 [assembly: System.Reflection.AssemblyTitleAttribute("numcon")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -12,3 +12,4 @@ C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Debug\net
 C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Debug\net8.0\numcon.pdb
 C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Debug\net8.0\numcon.genruntimeconfig.cache
 C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Debug\net8.0\ref\numcon.dll
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Debug\net8.0\numcon.sourcelink.json

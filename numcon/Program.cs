@@ -5,12 +5,12 @@ namespace numcon
     internal class Program
     {
         public static bool loopcancel = false;
-        public static void invalid()
+        public static void Invalid()
         {
             Console.WriteLine("\ninvalid input");
             loopcancel = true;
         }
-        public static char zahlensystem(char kennbuchstabe)
+        public static char Zahlensystem(char kennbuchstabe)
         {
             switch (kennbuchstabe)
             {
@@ -27,13 +27,13 @@ namespace numcon
                     Console.WriteLine("\n\nOctal");
                     break;
                 default:
-                    invalid();
+                    Invalid();
                     break;
             }
             return kennbuchstabe;
         }
 
-        public static void check(char key, string input)
+        public static void Check(char key, string input)
         {
             if (
                 (key != 'h' && !Regex.IsMatch(input, @"^\d+$")) ||
@@ -42,15 +42,11 @@ namespace numcon
                 (key == 'o' && !Regex.IsMatch(input, @"^[0-7]+$"))
                 )
             {
-                invalid();
-            }
-            else
-            {
-                Console.WriteLine("valid");
+                Invalid();
             }
         }
 
-        public static void convertTo(char key1, char key2, string wert)
+        public static void ConvertTo(char key1, char key2, string wert)
         {
             switch(key1)
             {
@@ -61,13 +57,29 @@ namespace numcon
                             Console.WriteLine(wert);
                             break;
                         case 'd':
-                            Console.WriteLine(Convert.ToInt32(wert, 2));
+                            int decimalZahl = 0;
+                            for (int i = 0; i < wert.Length; i++)
+                            {
+                                int quadZahl = 2;
+                                for (int j = 0; j < i; j++)
+                                {
+                                    if (i == 0)
+                                        quadZahl = 1;
+                                    else if (i > 1)
+                                        quadZahl *= 2;
+                                }
+                                if (wert[i] == '1')
+                                {
+                                    decimalZahl += quadZahl;
+                                }
+                            }
+                            Console.WriteLine(decimalZahl);
                             break;
                         case 'h':
-                            Console.WriteLine(Convert.ToInt32(wert, 2).ToString("X"));
+                            
                             break;
                         case 'o':
-                            Console.WriteLine(Convert.ToString(Convert.ToInt32(wert, 2), 8));
+                           
                             break;
                     }
                     break;
@@ -75,16 +87,16 @@ namespace numcon
                     switch (key2)
                     {
                         case 'b':
-                            Console.WriteLine(Convert.ToString(int.Parse(wert), 2));
+                            
                             break;
                         case 'd':
                             Console.WriteLine(wert);
                             break;
                         case 'h':
-                            Console.WriteLine(int.Parse(wert).ToString("X"));
+                            
                             break;
                         case 'o':
-                            Console.WriteLine(Convert.ToString(int.Parse(wert), 8));
+                            
                             break;
                     }
                     break;
@@ -92,16 +104,16 @@ namespace numcon
                     switch (key2)
                     {
                         case 'b':
-
+                            
                             break;
                         case 'd':
-
+                            
                             break;
                         case 'h':
-
+                            Console.WriteLine(wert);
                             break;
                         case 'o':
-
+                            
                             break;
                     }
                     break;
@@ -135,8 +147,8 @@ namespace numcon
                 Console.Clear();
                 Console.WriteLine("Binary Converter\n\n");
                 Console.WriteLine(keys);
-                Console.Write("convert from: ");
-                char keyWahl1 = zahlensystem(Console.ReadKey().KeyChar);
+                Console.Write("convert from (msb): ");
+                char keyWahl1 = Zahlensystem(Console.ReadKey().KeyChar);
                 
                 if (loopcancel == true)
                 {
@@ -146,7 +158,7 @@ namespace numcon
 
                 string ersteZahl = Console.ReadLine();
 
-                check(keyWahl1, ersteZahl);
+               Check(keyWahl1, ersteZahl);
                 if (loopcancel == true)
                 {
                     loopcancel = !loop;
@@ -154,13 +166,13 @@ namespace numcon
                 }
 
                 Console.WriteLine("\nconvert to: ");
-                char keyWahl2 = zahlensystem(Console.ReadKey().KeyChar);
+                char keyWahl2 = Zahlensystem(Console.ReadKey().KeyChar);
                 if (loopcancel == true)
                 {
                     loopcancel = !loop;
                     continue;
                 }
-                convertTo(keyWahl1, keyWahl2, ersteZahl);
+                ConvertTo(keyWahl1, keyWahl2, ersteZahl);
 
                 Console.ReadKey();
             }
