@@ -1,0 +1,15 @@
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\bin\Release\net8.0\numcon.exe
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\bin\Release\net8.0\numcon.deps.json
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\bin\Release\net8.0\numcon.runtimeconfig.json
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\bin\Release\net8.0\numcon.dll
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\bin\Release\net8.0\numcon.pdb
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Release\net8.0\numcon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Release\net8.0\numcon.AssemblyInfoInputs.cache
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Release\net8.0\numcon.AssemblyInfo.cs
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Release\net8.0\numcon.csproj.CoreCompileInputs.cache
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Release\net8.0\numcon.sourcelink.json
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Release\net8.0\numcon.dll
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Release\net8.0\refint\numcon.dll
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Release\net8.0\numcon.pdb
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Release\net8.0\numcon.genruntimeconfig.cache
+C:\Users\ulas.guevenc\Desktop\FW\grosser Lernbericht\numcon\numcon\obj\Release\net8.0\ref\numcon.dll

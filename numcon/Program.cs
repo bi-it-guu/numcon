@@ -9,6 +9,7 @@ namespace numcon
         {
             Console.WriteLine("\ninvalid input");
             loopcancel = true;
+            Console.ReadKey();
         }
         public static char Zahlensystem(char kennbuchstabe)
         {
@@ -57,29 +58,13 @@ namespace numcon
                             Console.WriteLine(wert);
                             break;
                         case 'd':
-                            int decimalZahl = 0;
-                            for (int i = 0; i < wert.Length; i++)
-                            {
-                                int quadZahl = 2;
-                                for (int j = 0; j < i; j++)
-                                {
-                                    if (i == 0)
-                                        quadZahl = 1;
-                                    else if (i > 1)
-                                        quadZahl *= 2;
-                                }
-                                if (wert[i] == '1')
-                                {
-                                    decimalZahl += quadZahl;
-                                }
-                            }
-                            Console.WriteLine(decimalZahl);
+                            Console.WriteLine(Convert.ToInt32(wert, 2));
                             break;
                         case 'h':
-                            
+                            Console.WriteLine(Convert.ToString(Convert.ToInt32(wert, 2), 16));
                             break;
                         case 'o':
-                           
+                            Console.WriteLine(Convert.ToString(Convert.ToInt32(wert, 2), 8));
                             break;
                     }
                     break;
@@ -87,16 +72,16 @@ namespace numcon
                     switch (key2)
                     {
                         case 'b':
-                            
+                            Console.WriteLine(Convert.ToString(int.Parse(wert), 2));
                             break;
                         case 'd':
                             Console.WriteLine(wert);
                             break;
                         case 'h':
-                            
+                            Console.WriteLine(Convert.ToString(int.Parse(wert), 16));
                             break;
                         case 'o':
-                            
+                            Console.WriteLine(Convert.ToString(int.Parse(wert), 8));
                             break;
                     }
                     break;
@@ -104,16 +89,16 @@ namespace numcon
                     switch (key2)
                     {
                         case 'b':
-                            
+                            Console.WriteLine(Convert.ToString(Convert.ToInt32(wert, 16), 2));
                             break;
                         case 'd':
-                            
+                            Console.WriteLine(Convert.ToInt32(wert, 16));
                             break;
                         case 'h':
                             Console.WriteLine(wert);
                             break;
                         case 'o':
-                            
+                            Console.WriteLine(Convert.ToString(Convert.ToInt32(wert, 16), 8));
                             break;
                     }
                     break;
@@ -121,16 +106,16 @@ namespace numcon
                     switch (key2)
                     {
                         case 'b':
-
+                            Console.WriteLine(Convert.ToString(Convert.ToInt32(wert, 8), 2));
                             break;
                         case 'd':
-
+                            Console.WriteLine(Convert.ToInt32(wert, 8));
                             break;
                         case 'h':
-
+                            Console.WriteLine(Convert.ToString(Convert.ToInt32(wert, 8), 16));
                             break;
                         case 'o':
-
+                            Console.WriteLine(wert);
                             break;
                     }
                     break;
