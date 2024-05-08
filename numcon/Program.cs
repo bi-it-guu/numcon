@@ -37,10 +37,10 @@ namespace numcon
         public static void Check(char key, string input)
         {
             if (
-                (key != 'h' && !Regex.IsMatch(input, @"^\d+$")) ||
                 (key == 'h' && !Regex.IsMatch(input, @"^(0x)?[0-9a-fA-F]+$")) ||
                 (key == 'b' && !Regex.IsMatch(input, @"^[0-1]+$")) ||
-                (key == 'o' && !Regex.IsMatch(input, @"^[0-7]+$"))
+                (key == 'o' && !Regex.IsMatch(input, @"^[0-7]+$")) ||
+                (key == 'd' && !Regex.IsMatch(input, @"^-?\d+$"))
                 )
             {
                 Invalid();
@@ -58,13 +58,13 @@ namespace numcon
                             Console.WriteLine(wert);
                             break;
                         case 'd':
-                            Console.WriteLine(Convert.ToInt32(wert, 2));
+                            Console.WriteLine(Convert.ToInt64(wert, 2));
                             break;
                         case 'h':
-                            Console.WriteLine(Convert.ToString(Convert.ToInt32(wert, 2), 16));
+                            Console.WriteLine(Convert.ToString(Convert.ToInt64(wert, 2), 16));
                             break;
                         case 'o':
-                            Console.WriteLine(Convert.ToString(Convert.ToInt32(wert, 2), 8));
+                            Console.WriteLine(Convert.ToString(Convert.ToInt64(wert, 2), 8));
                             break;
                     }
                     break;
@@ -89,16 +89,16 @@ namespace numcon
                     switch (key2)
                     {
                         case 'b':
-                            Console.WriteLine(Convert.ToString(Convert.ToInt32(wert, 16), 2));
+                            Console.WriteLine(Convert.ToString(Convert.ToInt64(wert, 16), 2));
                             break;
                         case 'd':
-                            Console.WriteLine(Convert.ToInt32(wert, 16));
+                            Console.WriteLine(Convert.ToInt64(wert, 16));
                             break;
                         case 'h':
-                            Console.WriteLine(wert);
+                            Console.WriteLine(wert.ToUpper());
                             break;
                         case 'o':
-                            Console.WriteLine(Convert.ToString(Convert.ToInt32(wert, 16), 8));
+                            Console.WriteLine(Convert.ToString(Convert.ToInt64(wert, 16), 8));
                             break;
                     }
                     break;
@@ -106,13 +106,13 @@ namespace numcon
                     switch (key2)
                     {
                         case 'b':
-                            Console.WriteLine(Convert.ToString(Convert.ToInt32(wert, 8), 2));
+                            Console.WriteLine(Convert.ToString(Convert.ToInt64(wert, 8), 2));
                             break;
                         case 'd':
                             Console.WriteLine(Convert.ToInt32(wert, 8));
                             break;
                         case 'h':
-                            Console.WriteLine(Convert.ToString(Convert.ToInt32(wert, 8), 16));
+                            Console.WriteLine(Convert.ToString(Convert.ToInt64(wert, 8), 16));
                             break;
                         case 'o':
                             Console.WriteLine(wert);
@@ -124,37 +124,33 @@ namespace numcon
 
         public static void Main(string[] args)
         {
-            bool loop = true;
             string keys = "b=binary d=decimal h=hexadecimal o=octal";
 
-            while (loop)
-            {
+            while (true)
+            { 
                 Console.Clear();
-                Console.WriteLine("Binary Converter\n\n");
+                Console.WriteLine("Zahlenkonvertierung\n\n");
                 Console.WriteLine(keys);
-                Console.Write("convert from (msb): ");
+                Console.Write("convert from (msb/big_endian): ");
                 char keyWahl1 = Zahlensystem(Console.ReadKey().KeyChar);
-                
-                if (loopcancel == true)
+                if (loopcancel)
                 {
-                    loopcancel = !loop;
+                    loopcancel = false;
                     continue;
                 }
-
                 string ersteZahl = Console.ReadLine();
 
-               Check(keyWahl1, ersteZahl);
-                if (loopcancel == true)
+                Check(keyWahl1, ersteZahl);
+                if (loopcancel)
                 {
-                    loopcancel = !loop;
+                    loopcancel = false;
                     continue;
                 }
-
                 Console.WriteLine("\nconvert to: ");
                 char keyWahl2 = Zahlensystem(Console.ReadKey().KeyChar);
-                if (loopcancel == true)
+                if (loopcancel)
                 {
-                    loopcancel = !loop;
+                    loopcancel = false;
                     continue;
                 }
                 ConvertTo(keyWahl1, keyWahl2, ersteZahl);
